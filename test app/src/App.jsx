@@ -33,9 +33,10 @@ function App() {
     axios
       .get("http://localhost:8800/api/subsector")
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.data);
         if (mounted) {
-          setData(response.data);
+          setData(response.data.data);
+          console.log(data)
         }
       return () => mounted = false
         // (
@@ -79,34 +80,12 @@ function App() {
               id=""
             >
               
-              {Object.keys(data).map((data, i) => (
-                <option key={i} value={data[name]}>{data[name]}</option>
+              {Object.values(data).map((data) => (
+                  <option key={data["_id"]} value={data["name"]}>{data["name"]}</option>
               ))} 
-              {/* <optgroup label="Manufacturing">
-                <option value="Construction materials">
-                  Construction materials
-                </option>
-                <option value="Electronic and Optics">
-                  Electronic and Optics
-                </option>
-              </optgroup>
-              <optgroup label="Food and Beverage">
-                <option value="Bakery & Confectionery Products">
-                  Bakery & Confectionery Products
-                </option>
-                <option value="Beverages">Beverages</option>
-                <option value="Fish & Fish Products">
-                  Fish & Fish Products
-                </option>
-                <option value="Meat & Meat Products">
-                  Meat & Meat Products
-                </option>
-                <option value="Milk & Dairy Products">
-                  Milk & Dairy Products
-                </option>
-                <option value="Sweets & snack food">Sweets & snack food</option>
-                <option value="Others">Others</option>
-              </optgroup> */}
+
+              
+              
             </select>
           </div>
 
