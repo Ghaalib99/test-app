@@ -29,7 +29,6 @@ function App() {
     axios
       .get("http://localhost:8800/api/subsector")
       .then((response) => {
-        console.log(response.data.data);
         if (mounted) {
           setData(response.data.data);
         }
