@@ -5,9 +5,7 @@ function App() {
   const [name, setName] = useState("");
   const [sector, setSector] = useState("");
   const [agree, setAgree] = useState(false);
-  const [data, setData] = useState('')
-
-  // console.log(name)
+  const [data, setData] = useState("");
 
   const body = {
     name,
@@ -20,30 +18,22 @@ function App() {
 
     axios
       .post("http://localhost:8800/api/users/save", body)
-      .then((response) => {
-        // console.log(response.data);
-      })
+      .then((response) => {})
       .catch((err) => {
         console.log(err.message);
       });
   };
 
   useEffect(() => {
-    let mounted = true
+    let mounted = true;
     axios
       .get("http://localhost:8800/api/subsector")
       .then((response) => {
         console.log(response.data.data);
         if (mounted) {
           setData(response.data.data);
-          console.log(data)
         }
-      return () => mounted = false
-        // (
-        //   response.data.sector.map((data) =>
-        //     console.log(data.name)
-        //   )
-        // );
+        return () => (mounted = false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -69,8 +59,6 @@ function App() {
             />
           </div>
 
-        
-
           <div className="sector">
             <label htmlFor="">Sectors:</label>
             <select
@@ -79,13 +67,11 @@ function App() {
               onChange={(e) => setSector(e.target.value)}
               id=""
             >
-              
               {Object.values(data).map((data) => (
-                  <option key={data["_id"]} value={data["name"]}>{data["name"]}</option>
-              ))} 
-
-              
-              
+                <option key={data["_id"]} value={data["name"]}>
+                  {data["name"]}
+                </option>
+              ))}
             </select>
           </div>
 
