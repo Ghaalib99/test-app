@@ -1,0 +1,22 @@
+{
+    "sector": [
+        {
+            "manufacturing": ["Construction materials", "Electronics and Optics"]
+        },
+        {
+            "Food and Beverage": ["Bakery & Confectionery Products", "Beverages", "Fish & Fish Products", "Meat & Meat Products", "Milk & Dairy Products", "Sweets & Snacks Food", "Others" ]
+        },
+        {
+            "Furniture": ["Bathroom/Sauna", "Bedroom", "Children's Room", "Kitchen", "Living Room", "Office", "Outdoor", "Project Furnitures", "Other Furnitures" ]
+        },
+        {
+            "Machinery": ["Machinery Components", "Machinery Equipment/Tools", "Manufacture of Machinery"]
+        },
+        {
+            "Maritime": ["Aluminium and Steel Workboats", "Boat/Yatch Building", "Ship Repair and Conversion", "Metal Structures", "Others" ]
+        },
+        {
+            "Metal Working": ["Construction of Metal Structures", "Houses and Buildings", "Metal Products", "Metal Works", "CNC-Machining", "Forgings" ]
+        }
+    ]
+}
