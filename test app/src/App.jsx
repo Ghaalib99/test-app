@@ -31,11 +31,11 @@ function App() {
   useEffect(() => {
     let mounted = true
     axios
-      .get("http://localhost:8800/api/sectors")
+      .get("http://localhost:8800/api/subsector")
       .then((response) => {
         console.log(response.data);
         if (mounted) {
-          setData(response.data.sector);
+          setData(response.data);
         }
       return () => mounted = false
         // (
@@ -67,6 +67,9 @@ function App() {
               value={name}
             />
           </div>
+
+        
+
           <div className="sector">
             <label htmlFor="">Sectors:</label>
             <select
@@ -77,7 +80,7 @@ function App() {
             >
               
               {Object.keys(data).map((data, i) => (
-                <optgroup key={i}>{data[name]}</optgroup>
+                <option key={i} value={data[name]}>{data[name]}</option>
               ))} 
               {/* <optgroup label="Manufacturing">
                 <option value="Construction materials">

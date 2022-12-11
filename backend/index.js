@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
 import seedRoutes from "./routes/seedRoute.js";
-// import subSectorRoutes from "./routes/subSectorRoute.js";
+import subSectorRoutes from "./routes/subSectorRoute.js";
 import sectorRoutes from "./routes/sectorRoute.js";
 
 const app = express();
@@ -21,7 +21,7 @@ mongoose
 app.use("/api/users", userRoutes);
 
 app.use("/api/seed", seedRoutes);
-// app.use("/api/subsector", subSectorRoutes);
+app.use("/api/subsector", subSectorRoutes);
 app.use("/api/sectors", sectorRoutes);
 
 

@@ -10,7 +10,7 @@ subSectorRoutes.get(
     const sector = await Subsector.find().populate('sectorId');
     res.send({
       status: true,
-      message: "Properties fetch sucessfully",
+      message: "Properties fetched sucessfully",
       data: sector,
     });
   })
